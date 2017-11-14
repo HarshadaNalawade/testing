@@ -1,0 +1,116 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "select",
+            "options": {
+                "Mr": "Mr",
+                "Mrs": "Mrs",
+                "Miss": "Miss"
+            }
+        },
+        {
+            "name": "username",
+            "type": "string"
+        },
+		{
+            "name": "password",
+            "type": "string"
+        },
+		{
+            "name": "first_name",
+            "type": "string"
+        },
+		{
+            "name": "last_name",
+            "type": "string"
+        },
+		{
+            "name": "email_id",
+            "type": "email"
+        },
+		{
+            "name": "phone_number",
+            "type": "string"
+        },
+		{
+            "name": "passport_number",
+            "type": "string"
+        },
+		{
+            "name": "address",
+            "type": "string"
+        },
+		{
+            "name": "state",
+            "type": "string"
+        },
+		{
+            "name": "city",
+            "type": "string"
+        },
+		{
+            "name": "country",
+            "type": "string"
+        },
+		{
+            "name": "role",
+            "type": "select",
+            "options": {
+                "Mr": "Mr",
+                "Mrs": "Mrs",
+                "Miss": "Miss"
+            }
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "role",
+            "references": "role_id",
+            "on": "roles",
+            "onDelete": "no action",
+            "onUpdate": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "role",
+            "type": "belongsTo",
+            "class": "App\\Models\\Roles"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required"
+        },
+		{
+            "field": "first_name",
+            "rules": "required"
+        },
+		{
+            "field": "last_name",
+            "rules": "required"
+        },
+		{
+            "field": "password",
+            "rules": "required"
+        },
+		{
+            "field": "email_id",
+            "rules": "required|email"
+        },
+		{
+            "field": "username",
+            "rules": "required"
+        },
+		{
+            "field": "phone_number",
+            "rules": "required"
+        },
+		{
+            "field": "passport_number",
+            "rules": "required"
+        }
+    ]
+}
